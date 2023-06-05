@@ -172,3 +172,18 @@ def play(dim_size=10, num_bombs=10):
         if not safe:
             # dug a bomb ahhhhhhh
             break  # (game over rip)
+
+    # 2 ways to end loop, lets check which one
+    if safe:
+        print("CONGRATULATIONS!!!! YOU ARE VICTORIOUS!")
+        board.dug = [(r, c) for r in range(board.dim_size) for c in range(board.dim_size)]
+        print(board)
+    else:
+        print("SORRY GAME OVER :(")
+        # let's reveal the whole board!
+        board.dug = [(r, c) for r in range(board.dim_size) for c in range(board.dim_size)]
+        print(board)
+
+
+if __name__ == '__main__':  # good practice :)
+    play()
